@@ -8,13 +8,15 @@ header_title: Aakash Sharma
   {% for post in site.posts %}
     <article class="post col-xs-12">
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <h1 class="post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
-      <div class="entry">
+      <div class="post-body">
         {{ post.excerpt }}
       </div>
-
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
+    <br/>
   {% endfor %}
 </div>
+
+
