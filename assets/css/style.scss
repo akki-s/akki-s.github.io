@@ -5,6 +5,7 @@
 
 @import "jekyll-theme-cayman";
 @import "basscss";
+@import "font-awesome";
 
 body {
     background: #f8f8f8;
@@ -28,9 +29,8 @@ body {
     text-transform: none;
     line-height: 1.2;
     color: #333333;
-    font-size: 48px;
     font-family: 'Josefin Sans';
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
 }
 
