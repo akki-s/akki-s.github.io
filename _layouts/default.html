@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ site.lang | default: "en-US" }}">
   <head>
-    {% include head.html %}
+{% include head.html %}
+{% seo %}
   </head>
-
   <body>
-    <div class="container-fluid">
-      <div class="jumbotron">
-        <div class="text-center">
-        <p><a href="{{ site.baseurl }}/" class="text-center"><img class="img-responsive col-xs-4 col-sm-3 col-md-2 img-circle" src="{{ site.avatar }}" /></a></p>
-        <div class="site-info">
-          <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-          <p class="site-description">{{ site.description }}</p>
-        </div>
-        <div class="col-xs-12 text-center">
+    <section class="page-header">
+      <p><a href="{{ site.baseurl }}/" ><img class="border bg-white p1 border-light-gray circle square-100" src="{{ site.avatar }}" /></a></p>
+      <h1 class="project-name">{{ site.name | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+       
     {% for external_url_hash in site.contact_urls %}
       {% assign external_url = external_url_hash[1] %}
       <a href="{{ external_url.url }}" target="_blank" class="gray hint--top" data-hint="{{ external_url.label }}">
         <i class="fa fa-fw fa-lg fa-{{ external_url.icon }}"></i>
       </a>
     {% endfor %}
-  </div>
-      </div>
-      </div>
-    </div>
+  
+    </section>
 
-    <div id="main" role="main" class="container">
+    <section class="main-content">
       {{ content }}
-    </div>
 
+     
     {% include footer.html %}
+
+    </section>
+
     {% include scripts.html %}
   </body>
 </html>
