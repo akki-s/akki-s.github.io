@@ -13,6 +13,8 @@ description: Azure and .Net Developer
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars3.githubusercontent.com/u/3936081?s=460&v=4
 
+repository: akki-s/akki-s.github.io
+
 #
 # Flags below are optional
 #
@@ -86,6 +88,7 @@ sass:
 plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-coffeescript
 
 # Exclude these files from your production _site
 exclude:
