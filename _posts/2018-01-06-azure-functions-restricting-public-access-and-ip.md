@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Restricting Public Access and IP Addresses to Azure Functions
+title: Securing Azure Functions
 date: '2018-01-06T08:48:00.000+05:30'
+comments: true
 author: aks
 tags:
 - Security

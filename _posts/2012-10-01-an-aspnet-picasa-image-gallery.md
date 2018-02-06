@@ -3,6 +3,7 @@ layout: post
 title: An ASP.NET Picasa Image Gallery
 date: '2012-10-01T10:07:00.000+05:30'
 author: aks
+comments: true
 tags:
 - Image Gallery
 - ".Net"

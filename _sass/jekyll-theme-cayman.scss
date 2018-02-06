@@ -93,15 +93,15 @@ a {
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
 
   @include large {
-    padding: 5rem 6rem;
+    padding: 1.75rem 4rem;
   }
 
   @include medium {
-    padding: 3rem 4rem;
+    padding: 1.25rem 3rem;
   }
 
   @include small {
-    padding: 2rem 1rem;
+    padding: 0.8rem 1rem;
   }
 }
 
@@ -110,33 +110,33 @@ a {
   margin-bottom: 0.1rem;
 
   @include large {
-    font-size: 3.25rem;
-  }
-
-  @include medium {
     font-size: 2.25rem;
   }
 
-  @include small {
+  @include medium {
     font-size: 1.75rem;
+  }
+
+  @include small {
+    font-size: 1.15rem;
   }
 }
 
 .project-tagline {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-weight: normal;
   opacity: 0.7;
 
   @include large {
-    font-size: 1.25rem;
-  }
-
-  @include medium {
     font-size: 1.15rem;
   }
 
-  @include small {
+  @include medium {
     font-size: 1rem;
+  }
+
+  @include small {
+    font-size: 0.85rem;
   }
 }
 
@@ -343,3 +343,4 @@ a {
 .site-footer-credits {
   color: $blockquote-text-color;
 }
+

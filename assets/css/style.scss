@@ -50,3 +50,23 @@ body {
 	font-size: 13px;
 	color: #333333;
 }
+
+.post-body {
+  blockquote {
+    margin: 1.8em .8em;
+    border-left: 2px solid #c0c0c0;
+    padding: 0.1em 1em;
+    color: #c0c0c0;
+    font-size: 22px;
+    font-style: italic;
+  }
+
+  .comments {
+    margin-top: 10px;
+  }
+
+  .read-more {
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+}

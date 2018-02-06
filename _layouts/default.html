@@ -6,8 +6,8 @@
   </head>
   <body>
     <section class="page-header">
-      <p><a href="{{ site.baseurl }}/" ><img class="border bg-white p1 border-light-gray circle square-200" src="{{ site.avatar }}" /></a></p>
-      <h1 class="project-name">{{ site.name | default: site.github.repository_name }}</h1>
+      <p><a href="{{ site.baseurl }}/" ><img class="border bg-white p0 border-light-gray circle square-200" src="{{ site.avatar }}" /></a></p>
+      <h1 class="project-name"><a href="{{ site.baseurl }}/" >{{ site.name | default: site.github.repository_name }}</a></h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
        
     {% for external_url_hash in site.contact_urls %}

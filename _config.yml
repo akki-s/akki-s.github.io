@@ -1,5 +1,7 @@
 #theme: jekyll-theme-cayman
 
+disqus: aakash-sharma
+
 # Site settings
 title: Blog
 # Name of your site 
@@ -49,7 +51,7 @@ contact_urls:
 # !! You don't need to change any of the configuration flags below !!
 #
 
-permalink: pretty
+permalink: /:title/
 
 # The release of Jekyll Now that you're using
 version: v1.2.0
