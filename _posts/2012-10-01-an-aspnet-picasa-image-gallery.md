@@ -4,13 +4,7 @@ title: An ASP.NET Picasa Image Gallery
 date: '2012-10-01T10:07:00.000+05:30'
 author: aks
 comments: true
-tags:
-- Image Gallery
-- ".Net"
-- ASP.NET
-- Tutorials
-- Articles
-- Picasa
+tags: [Image Gallery, .Net, ASP.NET, Picasa]
 modified_time: '2012-10-01T11:09:22.105+05:30'
 thumbnail: http://2.bp.blogspot.com/-9pk01508_C8/UGksZI2I-wI/AAAAAAAAFxg/wzLnkv7KZ08/s72-c/gallery.PNG
 blogger_id: tag:blogger.com,1999:blog-7475258030496424805.post-4367423925819788156

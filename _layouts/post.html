@@ -6,16 +6,7 @@ layout: default
   <h1 class="post-title">{{ page.title }}</h1>
   <div class="date" style="font-style: italic;">
     <code>written on {{ page.date | date: "%B %e, %Y" }}</code>
-      {% if page.tags.size > 0 %}
-    <span class="post-tags">
-    &nbsp;
-    <i class="fa fa-tags"></i>&nbsp;
-    {% for tag in page.tags %}
-      {% capture tag_name %}{{ tag }}{% endcapture %}
-      <a class="no-underline" href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>    
-    {% endfor %}    
-  </span>
-  {% endif %}
+    {% include post-tags.html %}
   </div>
   <br/>
   <div class="post-body">
