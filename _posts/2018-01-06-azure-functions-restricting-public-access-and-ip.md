@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Securing Azure Functions
+title: Blocking all external access and securing Azure Functions
 date: '2018-01-06T08:48:00.000+05:30'
 comments: true
 author: aks
