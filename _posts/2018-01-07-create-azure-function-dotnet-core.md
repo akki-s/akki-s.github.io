@@ -13,6 +13,7 @@ Latest version of Visual Studio Extension [Azure Functions and Web tools](https:
 
 Moreover, being a C# library, it makes it possible to write unit tests, and use code analysis for Azure Function. In this post we'll limit ourselves to creating a dotnet core Azure Function, and then later posts will cover unit testing an Azure Function, and how to do CI/CD for Azure Functions.
 
+{::comment}
 ## Intended use case
 
 For the purpose of this exercise, we will be creating an Azure Function for a very simple scenario. Reason for having a simple scenario? Well, to keep things simple.
@@ -29,6 +30,7 @@ Then return false
 {% endhighlight %}
 
 For this solution we'll validate driving license number just using a Regular Expression. In real world you'll be calling an ID verification API.
+{:/comment}
 
 ## Creating Azure Function in Visual Studio
 
@@ -36,7 +38,7 @@ For this solution we'll validate driving license number just using a Regular Exp
 - Above template lets you create Azure Function v2 version which is in dotnet core. You must understand that currently Azure Functions v2 is in preview, and this is not fit for production.
 - Create a new project in Visual Studio and select Azure Functions template. 
 - Ignore the first screen for creating Azure Function as it still shows .Net Framework versions. Don't get confused with that, and be patient, and go to the next step.
-	
+
 	![azure functions and webjobs tools template]({{ site.baseurl }}/assets/images/posts/af/azure-functions-dotnet-core-01.png)
 
 - At the next step you can select to use Azure Functions v2. The new template lets you select a storage account and access rights. You can select any trigger type based on your need. You can even select empty, and then add a new function to your project later.

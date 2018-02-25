@@ -10,4 +10,4 @@ fi
 
 powershell ./tag-generator.ps1
 
-bundle exec jekyll serve --drafts --incremental --limit_posts "$LIMIT_POSTS" --host 0.0.0.0
+bundle exec jekyll serve --baseurl '' --drafts --incremental --limit_posts "$LIMIT_POSTS" --host 127.0.0.1
