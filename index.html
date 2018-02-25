@@ -12,7 +12,20 @@ header_title: Aakash Sharma
       <br/>
       {% include post-tags.html %}
       <div class="post-body">
-        {{ post.excerpt }}
+        <div class="row">
+          {% if post.thumbnail %}
+          <div class="hidden-xs col-sm-4">
+              <a href="{{ site.baseurl }}{{ post.url }}"><img src="{{ post.thumbnail }}" style="width: 100%;"/></a>
+          </div>
+          {% assign cssname = 'col-sm-8' %}
+          {% else %}
+          {% assign cssname = 'col-sm-12' %}
+          {% endif %}
+
+          <div class="col-xs-12 {{cssname}}">
+            {{ post.excerpt }}
+          </div>
+      </div>
       </div>
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
