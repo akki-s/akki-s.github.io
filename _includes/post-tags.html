@@ -1,0 +1,11 @@
+  {% if page.tags.size > 0 %}
+    <span class="post-tags">
+    &nbsp;
+    <i class="fa fa-tags"></i>&nbsp;
+    {% for tag in page.tags %}
+      {% capture tag_name %}{{ tag }}{% endcapture %}
+      {% capture tag_esc %}{{ tag | downcase | replace: ' ', '-' }}{% endcapture %}
+      <a class="no-underline" href="/tag/{{ tag_esc  }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>    
+    {% endfor %}    
+  </span>
+  {% endif %}

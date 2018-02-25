@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+{% include head.html %}
+{% seo %}
+  </head>
+  <body>
+    <section class="page-header">
+      <p><a href="{{ site.baseurl }}/" ><img class="border bg-white p0 border-light-gray circle square-200" src="{{ site.avatar }}" /></a></p>
+      <h1 class="project-name"><a href="{{ site.baseurl }}/" >{{ site.name | default: site.github.repository_name }}</a></h1>
+      <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+       
+    {% for external_url_hash in site.contact_urls %}
+      {% assign external_url = external_url_hash[1] %}
+      <a href="{{ external_url.url }}" target="_blank" class="gray hint--top" data-hint="{{ external_url.label }}">
+        <i class="fa fa-2x fa-fw fa-lg fa-{{ external_url.icon }}"></i>
+      </a>
+    {% endfor %}
+  
+    </section>
+
+    <section class="main-content container">
+      {{ content }}
+
+     
+    {% include footer.html %}
+
+    </section>
+
+    {% include scripts.html %}
+  </body>
+</html>

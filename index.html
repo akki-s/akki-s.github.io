@@ -1,0 +1,36 @@
+---
+layout: default
+title: "Aakash Sharma: Home Page"
+header_title: Aakash Sharma
+---
+
+<div class="posts row">
+  {% for post in site.posts %}
+    <article class="post col-xs-12">
+
+      <h1 class="post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <br/>
+      {% include post-tags.html %}
+      <div class="post-body">
+        <div class="row">
+          {% if post.thumbnail %}
+          <div class="hidden-xs col-sm-4">
+              <a href="{{ site.baseurl }}{{ post.url }}"><img src="{{ post.thumbnail }}" style="width: 100%;"/></a>
+          </div>
+          {% assign cssname = 'col-sm-8' %}
+          {% else %}
+          {% assign cssname = 'col-sm-12' %}
+          {% endif %}
+
+          <div class="col-xs-12 {{cssname}}">
+            {{ post.excerpt }}
+          </div>
+      </div>
+      </div>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+    <br/>
+  {% endfor %}
+</div>
+
+
