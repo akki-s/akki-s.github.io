@@ -39,7 +39,7 @@ For this solution we'll validate driving license number just using a Regular Exp
 - Create a new project in Visual Studio and select Azure Functions template. 
 - Ignore the first screen for creating Azure Function as it still shows .Net Framework versions. Don't get confused with that, and be patient, and go to the next step.
 
-	![azure functions and webjobs tools template]({{ site.baseurl }}/images/azure-functions-dotnet-core-01.png)
+	![azure functions and webjobs tools template](/images/azure-functions-dotnet-core-01.png)
 
 - At the next step you can select to use Azure Functions v2. The new template lets you select a storage account and access rights. You can select any trigger type based on your need. You can even select empty, and then add a new function to your project later.
 	
