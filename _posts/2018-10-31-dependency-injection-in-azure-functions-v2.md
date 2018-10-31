@@ -34,63 +34,21 @@ The first thing we do is make a change in `TimeZoneService.cs` in Services proje
 
 The next step is to register the services and build the `ServiceProvider`. This is done by creating an instance of `IServiceCollection`, registering the services and then making a call to the `BuildServiceProvider` method on the ServiceCollection. This returns the ServiceProvider that has all the registrations and other configuration if we used it, such as adding logging. Below is the class that has a static method called `ConfigureServices` that does all this work. This is what ASP.NET Core does out of the box and I'm utilizing same here for Azure functions.
 
-```csharp
-    public static IServiceProvider ConfigureServices()
-    {
-        var services = new ServiceCollection()
-                .AddTransient<ITimeZoneService, TimeZoneService>()
-                .AddTransient<IAzureBlobStorageHelper, AzureBlobStorageHelper>();
-
-        return services.BuildServiceProvider();
-    }
-```
+<script src="https://gist.github.com/akki-s/fb78c62b7fc6adc3fc8f23058c0dede4.js"></script>
 
 Note that the above method registers `TimeZoneService` and `AzureBlobStorageHelper`.
 
 Now all that's left to be done is to call `ConfigureServices` from within the Azure Function, to configure the service collection, and get an instance of TimeZoneService from the ServiceProvider (You may like to call the serviceProvider something else, such as `container` as it is in other DI frameworks like AutoFac).
 
-```csharp
-    [FunctionName("GetTimeZones")]
-    public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "timezones")]HttpRequest req)
-    {
-        var serviceProvider = Bootstrap.ConfigureServices();
-        var timeZoneService = serviceProvider.GetService<ITimeZoneService>();
-        var timeZones = await timeZoneService.GetTimeZones().ConfigureAwait(false);
-
-        return new OkObjectResult(timeZones ?? new List<string>());
-    }
-```
+<script src="https://gist.github.com/akki-s/d7d0f87869276b3c8463b0f9e89efc56.js"></script>
 
 In order to use the generic method `GetService<T>` above we need to add a reference to `Microsoft.Extensions.DependencyInjection` in our functions project:
 
-```xml
- <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.13" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
-  </ItemGroup>
-```
+<script src="https://gist.github.com/akki-s/32ad397225d655e7835836c0da3d1dfa.js"></script>
+
 `TimeZoneService.cs` now injects `IAzureBlobStorageHelper` in its constructor:
 
-```csharp
-    public class TimeZoneService : ITimeZoneService
-    {
-        private const string ContainerName = "azfnv2demo";
-        private const string FileName = "timezones.json";
-
-        private readonly IAzureBlobStorageHelper _azureBlobStorageHelper;
-
-        public TimeZoneService(IAzureBlobStorageHelper azureBlobStorageHelper)
-        {
-            _azureBlobStorageHelper = azureBlobStorageHelper;;
-        }
-
-        public async Task<IEnumerable<string>> GetTimeZones()
-        {
-            var jsonContent = await _azureBlobStorageHelper.DownloadBlobContent(ContainerName, FileName).ConfigureAwait(false);
-            return string.IsNullOrEmpty(jsonContent) ? null : JsonConvert.DeserializeObject<IEnumerable<string>>(jsonContent);
-        }
-    }
-```
+<script src="https://gist.github.com/akki-s/923728e1332cf510d13f53d8ad12ac74.js"></script>
 
 This is it. This might not be the best solution for DI in Azure functions, but it certainly is very simple. 
 
